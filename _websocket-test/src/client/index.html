@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <title>WebSockets test</title>
+
+        <style>
+            * {
+                font-family: tahoma;
+                font-size: 12px;
+                padding: 0px;
+                margin: 0px;
+                background-color: grey;
+            }
+            #main-canvas {
+                margin: 0px auto;
+                max-width: 800px;
+                max-height: 600px;
+            }
+            #logger-output {
+                width: 95%;
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="main-canvas" width="800" height="600"></canvas>
+
+        <textarea id="logger-output" rows="20" readonly></textarea>
+        <script src="./bundle.js"></script>
+    </body>
+
+</html>

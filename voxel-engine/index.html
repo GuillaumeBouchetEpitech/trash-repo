@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Voxel Engine</title>
+
+    <style>
+      body, h1, p, li {
+        border: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        font-family: arial;
+      }
+
+      ul {
+        border: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 20px;
+        font-family: arial;
+      }
+
+      h1 {
+        font-size: 20px;
+        border: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+      }
+
+      #renderArea {
+        border: 0px none;
+        margin: 0px auto; /* center */
+        padding: 0px none;
+        background-color: black;
+        width: 800px;
+        height: 600px;
+      }
+
+      #title-description {
+        text-align: center;
+      }
+
+      #text-description {
+        text-align: center;
+      }
+
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      #emscriptenCanvas {
+        border: 0px none;
+        margin: 0px auto;
+        padding: 0px none;
+        width: 800px; /* <= fix Apple retina display issue(s)*/
+        height: 600px; /* <= fix Apple retina display issue(s)*/
+        display: none;
+      }
+
+      #errorText {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        margin: 0px auto;
+        padding: 0px none;
+        border: 0px none;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        text-align: center;
+        outline: none;
+        display: block;
+      }
+
+      #loggerOutput {
+        width: 99%;
+        margin: 0px auto;
+        border: 0px none;
+        padding: 0px none;
+        background-color: black;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        outline: none;
+        display: block;
+      }
+    </style>
+
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+
+    <div id="title-description">
+      <h1>Test</h1>
+    </div>
+
+    <div id="renderArea">
+      <canvas id="emscriptenCanvas" width="800" height="600"></canvas>
+      <p id="errorText">Loading</p>
+    </div>
+
+    <textarea id="loggerOutput" rows="10" readonly></textarea>
+  </body>
+</html>

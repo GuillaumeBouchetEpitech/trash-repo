@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <title>🌍 Planet</title>
+
+        <!-- disable the zoom -->
+        <meta content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0' name='viewport' />
+
+        <style>
+            body {
+                background-color: #0F0F0F;
+                color: #8F8F8F;
+                border: 0px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                font-family: arial;
+            }
+
+            #render-area {
+                border: 0px none;
+                margin: 0px auto; /* horizontally centered */
+                padding: 0px none;
+
+                background-color: black;
+                width: 95%;
+                min-width: 200px;
+                min-height: 200px;
+                max-width: 1000px;
+                max-height: 700px;
+            }
+
+            /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+            #main-canvas {
+                background-color: black;
+                border: none;
+                margin: auto;
+                padding: 0px;
+                width: 100%;
+                min-width: 200px;
+                min-height: 200px;
+                max-width: 1000px; /* <= fix Apple retina display issue(s)*/
+                max-height: 700px; /* <= fix Apple retina display issue(s)*/
+            }
+
+            /* style="border: none; position:relative; left:0px; top:0px; width:800px; height:600px" */
+
+            #logger-output {
+                width: 99%;
+                margin: 0px auto;
+                border: 0px none;
+                padding: 0px none;
+                background-color: black;
+                color: white;
+                font-family: 'Lucida Console', Monaco, monospace;
+                outline: none;
+                display: block;
+            }
+
+        </style>
+
+    </head>
+
+
+    <body>
+
+        <div id="render-area">
+            <canvas
+                id="main-canvas"
+                width="1000"
+                height="700"
+                >
+            </canvas>
+        </div>
+
+        <textarea id="logger-output" rows="10" readonly></textarea>
+
+        <script src="dist/bundle.js"></script>
+
+    </body>
+
+</html>

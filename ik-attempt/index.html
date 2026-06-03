@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <title>WebGL Blank Project</title>
+
+        <!-- disable the zoom -->
+        <meta content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0' name='viewport' />
+
+        <style>
+            body {
+                background-color: #0F0F0F;
+                color: #8F8F8F;
+                border: 0px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                font-family: arial;
+            }
+
+            #main_table {
+                margin: auto;
+            }
+
+            #main_table td {
+                margin-left: auto;
+            }
+
+            #error-text {
+                position: relative;
+                left: 10px;
+                top: 10px;
+                margin: 0px auto; /* horizontally centered */
+                padding: 0px none;
+                border: 0px none;
+                font-size: 20px;
+                color: white;
+                font-family: 'Lucida Console', Monaco, monospace;
+                text-align: center;
+                outline: none;
+                display: none;
+            }
+
+            .button {
+                background-color: #666; /* Green */
+                border: none;
+                color: #ddd;
+                padding: 5px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+        </style>
+
+    </head>
+
+
+    <body>
+
+        <table id="main_table" border='1'>
+
+            <tr>
+
+                <td colspan="5">
+                    <canvas
+                        id="main-canvas"
+                        style="border: none; position:relative; left:0px; top:0px; width:800px; height:600px"
+                        width="800"
+                        height="600"
+                        >
+                    </canvas>
+                    <p id="error-text">Loading</p>
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>
+                    <table>
+                        <tr><th colspan="3">Interface</th></tr>
+                        <td colspan="1">
+                            <button id="button-fullscreen" class="button">Fullscreen mode</button>
+                        </td>
+                    </table>
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <script src="dist/bundle.js"></script>
+
+    </body>
+
+</html>

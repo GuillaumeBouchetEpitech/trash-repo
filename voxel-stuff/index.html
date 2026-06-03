@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Voxel-Stuff (loading)</title>
+    <style>
+      body {
+        border: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        font-family: arial;
+      }
+
+      #renderArea {
+        border: 0px none;
+        margin: 0px auto;
+        padding: 0px none;
+        background-color: black;
+        width: 1200px;
+        height: 700px;
+      }
+
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      /* #emscriptenCanvas { */
+      #canvas {
+        border: 0px none;
+        margin: 0px auto; /* center canvas */
+        padding: 0px none;
+        display: none;
+        width: 1200px; /* <= fix Apple retina display issue(s)*/
+        height: 700px; /* <= fix Apple retina display issue(s)*/
+        display: none;
+      }
+
+      #errorText {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        margin: 0px auto;
+        padding: 0px none;
+        border: 0px none;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        text-align: center;
+        outline: none;
+        display: block;
+      }
+
+      #loggerOutput {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px none;
+        padding: 0px none;
+        background-color: black;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        outline: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="renderArea">
+      <canvas id="canvas" width="1200" height="700"></canvas>
+      <p id="errorText">Loading</p>
+    </div>
+
+    <textarea id="loggerOutput" rows="10" readonly></textarea>
+
+    <script type="module" src="js/main.js"></script>
+
+  </body>
+</html>

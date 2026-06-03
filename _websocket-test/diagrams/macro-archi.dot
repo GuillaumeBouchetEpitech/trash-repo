@@ -1,0 +1,97 @@
+
+
+digraph {
+
+  bgcolor="#888888"
+
+  node [
+    style=filled
+    fontcolor="#eeeeee"
+  ]
+
+  subgraph client_graph {
+
+    cluster="true"
+    color="#000000"
+    bgcolor="#88aa88"
+
+    client_main_logic [label="client logic\n\l- main loop\l  - update\l    - interpolate snapshot frames\l  - render\l" shape="box" fillcolor="#666644"]
+
+    subgraph client_inputs_graph {
+
+      cluster="true"
+      color="#000000"
+      bgcolor="#66aa66"
+
+      client_in__socket [label="input\nsocket" shape="ellipse" fillcolor="#444466"]
+      client_out__socket [label="output\nsocket" shape="hexagon" fillcolor="#664444"]
+
+    }
+
+    subgraph client_outputs_graph {
+
+      cluster="true"
+      color="#000000"
+      bgcolor="#66aa66"
+
+      client_out__graphic_audio [label="output\ngraphic/audio" shape="hexagon" fillcolor="#664444"]
+      client_in__mouse_keyboard [label="input\nmouse/keyboard" shape="ellipse" fillcolor="#444466"]
+    }
+
+  }
+
+
+
+  subgraph server_graph {
+
+    cluster="true"
+    color="#000000"
+    bgcolor="#885533"
+
+    subgraph client_inputs_graph {
+
+      cluster="true"
+      color="#000000"
+      bgcolor="#AA6644"
+
+      server_in__socket [label="input\nsocket" shape="ellipse" fillcolor="#444466"]
+      server_out__socket [label="output\nsocket" shape="hexagon" fillcolor="#664444"]
+
+    }
+
+    server_main_logic [label="server logic\n\l- main loop\l  - update\l  - generate game states snapshot" shape="box" fillcolor="#666644"]
+
+  }
+
+
+
+  edge [
+    fontcolor="#ffffff"
+    minlen=1.5
+  ]
+
+  client_in__mouse_keyboard -> client_main_logic
+  client_in__socket -> client_main_logic
+  client_main_logic -> client_out__socket
+
+  client_main_logic -> client_out__graphic_audio
+
+  server_in__socket -> server_main_logic
+  server_main_logic -> server_out__socket
+
+
+
+  edge [
+    minlen=3.0
+    style="dashed"
+  ]
+
+  client_out__socket -> server_in__socket [label="send:\l- live events\l"]
+
+  server_out__socket -> client_in__socket [label="broadcast:\l- live events\l- snapshots\l"]
+
+
+
+}
+
+

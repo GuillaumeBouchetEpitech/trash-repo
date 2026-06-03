@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8"/>
+
+        <title>LOL</title>
+
+        <!-- disable the zoom -->
+        <meta content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0' name='viewport' />
+
+        <style>
+            body {
+                background-color: #0F0F0F;
+                color: #8F8F8F;
+                border: 0px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                font-family: arial;
+            }
+
+            #main_table {
+                margin: auto;
+            }
+
+            #main_table td {
+                margin-left: auto;
+            }
+
+            .description h4 {
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .description p,
+            .description ul {
+                margin-left: 10px;
+                margin-right: 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            canvas {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                outline: none;
+                -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+            }
+        </style>
+
+    </head>
+
+
+    <body>
+
+        <table id="main_table" border='1'>
+            <tr>
+
+                <td colspan="5">
+                    <canvas
+                        id="main-canvas"
+                        style="border: none; position:relative; left:0px; top:0px; width:800px; height:600px"
+                        width="800"
+                        height="600"
+                        >
+                    </canvas>
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>
+
+                    <table>
+
+                        <tr><th colspan="3">Interface</th></tr>
+
+                        <tr><th colspan="3">
+                            <button id="gui_fullscreen">Fullscreen mode</button>
+                        </th></tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <script src="dist/bundle.js"></script>
+
+    </body>
+
+</html>

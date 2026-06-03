@@ -1,0 +1,65 @@
+digraph {
+
+  bgcolor="#aaaaaa"
+
+  node [
+    shape="box"
+    style=filled
+    fontcolor="#eeeeee"
+    fillcolor="#666644"
+  ]
+
+  edge [
+    fontcolor="#aa0000"
+    len=1.0
+  ]
+
+  subgraph cluster_ground_floor {
+    color="#000000"
+    bgcolor="#888888"
+
+    Lounge_floor [label="Lounge\nFloor" shape="ellipse"]
+    Kitchen_floor [label="Kitchen\nFloor" shape="ellipse"]
+  }
+
+
+  subgraph cluster_ground_ceiling {
+    color="#000000"
+    bgcolor="#888888"
+
+    Lounge_ceiling [label="Lounge\nCeiling" shape="ellipse"]
+    Kitchen_ceiling [label="Kitchen\nCeiling" shape="ellipse"]
+  }
+
+
+
+  root [label="root" shape=ellipse]
+  node1 [label="node\n1"]
+  node2 [label="node\n2"]
+  node3 [label="node\n3"]
+  node4 [label="node\n4"]
+  node5 [label="node\n5" shape=diamond]
+  node51 [label="node\n51"]
+  node52 [label="node\n52"]
+  node521 [label="node\n521" shape=circle]
+  node53 [label="node\n53"]
+  node6 [label="node\n6"]
+
+  root -> node1
+  root -> node2
+  root -> node3
+  root -> node4
+  root -> node5
+  root -> node6
+
+  edge [len=1.2]
+
+  node5 -> node51
+  node5 -> node52
+  node5 -> node53
+  node52 -> node521
+
+  edge [len=3.8]
+
+
+}
